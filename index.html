@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <title>Income Tax Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="intro">
+            <a class="brand" href="#" aria-label="Taxwise home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img">
+                        <path d="M7 17.5 7.9 13m3.2 4.5L13 8m1.8 9.5 2.2-11"/>
+                        <path d="M5 10.5h14M4 15h14"/>
+                    </svg>
+                </span>
+                <span>taxwise</span>
+            </a>
+
+            <div class="intro-copy">
+                <span class="eyebrow">Smart tax planning</span>
+                <h1>Know your tax.<br><span>Plan with clarity.</span></h1>
+                <p>Get a quick estimate of your income tax in seconds—simple, transparent, and easy to understand.</p>
+
+                <div class="trust-list" aria-label="Calculator benefits">
+                    <div>
+                        <span class="check" aria-hidden="true">✓</span>
+                        <span><strong>Instant estimate</strong>Calculated as you submit</span>
+                    </div>
+                    <div>
+                        <span class="check" aria-hidden="true">✓</span>
+                        <span><strong>No data stored</strong>Your information stays private</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="intro-footnote">Built for quick estimates. Always consult a tax professional for filing advice.</p>
+        </section>
+
+        <section class="calculator-panel">
+            <div class="calculator-card">
+                <div class="card-heading">
+                    <span class="step">01</span>
+                    <div>
+                        <p class="kicker">Tax estimator</p>
+                        <h2>Enter your annual income</h2>
+                    </div>
+                </div>
+
+                <form id="tax-form" novalidate>
+                    <label for="income">Gross annual income</label>
+                    <div class="income-field">
+                        <span class="currency" aria-hidden="true">₹</span>
+                        <input
+                            type="number"
+                            id="income"
+                            name="income"
+                            min="0"
+                            step="1000"
+                            inputmode="numeric"
+                            placeholder="e.g. 18,00,000"
+                            aria-describedby="income-hint income-error"
+                            required
+                        >
+                    </div>
+                    <div class="field-meta">
+                        <span id="income-hint">Enter income before deductions</span>
+                        <span id="income-error" class="error" role="alert"></span>
+                    </div>
+
+                    <button type="submit" id="calculate">
+                        <span>Calculate my tax</span>
+                        <span class="arrow" aria-hidden="true">→</span>
+                    </button>
+                </form>
+
+                <section class="result" id="result" aria-live="polite" aria-hidden="true">
+                    <div class="result-topline">
+                        <span>Estimated tax payable</span>
+                        <span class="result-badge">Estimate</span>
+                    </div>
+                    <p class="tax-amount" id="tax-amount">₹0</p>
+                    <div class="result-grid">
+                        <div>
+                            <span>Post-tax income</span>
+                            <strong id="post-tax">₹0</strong>
+                        </div>
+                        <div>
+                            <span>Effective rate</span>
+                            <strong id="effective-rate">0%</strong>
+                        </div>
+                    </div>
+                    <button type="button" class="recalculate" id="recalculate">Recalculate with a new income</button>
+                </section>
+
+                <div class="card-footer">
+                    <span aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.9 8.2 7 10 4.1-1.8 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </span>
+                    <p><strong>Private by design</strong>Your income is calculated locally and never leaves this page.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
